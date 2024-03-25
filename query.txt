@@ -39,3 +39,17 @@ SELECT COUNT(`id`) AS `numero_dipartimenti`
 FROM `departments`;
 
 
+8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
+SELECT COUNT(`id`) AS `no_phone_number`
+FROM `teachers`
+WHERE `phone` IS NULL;
+
+
+3. Selezionare tutti gli studenti che hanno più di 30 anni
+SELECT *
+FROM `students`
+WHERE YEAR(`date_of_birth`) <= 1994 
+&& MONTH(`date_of_birth`) <= MONTH(NOW()) 
+&& DAY(`date_of_birth`) <= DAY(NOW());
+
+
