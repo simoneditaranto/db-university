@@ -87,5 +87,16 @@ GROUP BY courses.id, students.id
 ORDER by students.id;
 
 
+SELECT students.id, students.name, students.surname, courses.name AS nome_corso, courses.id AS id_corso, exam_student.vote
+FROM `students` 
+INNER JOIN `exam_student` 
+ON students.id = exam_student.student_id 
+INNER JOIN `exams` 
+ON exam_student.exam_id = exams.id 
+INNER JOIN courses 
+ON exams.course_id = courses.id 
+WHERE exam_student.vote >= 18
+ORDER by students.id;
+
 
 
